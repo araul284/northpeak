@@ -131,8 +131,15 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-black flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-medium text-zinc-600">
-          <p>© {new Date().getFullYear()} NorthPeak Digital LLC. All rights reserved.</p>
-                    <a
+          <a
+            href="https://github.com/araul284/northpeak"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-black transition-colors"
+          >
+            © {new Date().getFullYear()} NorthPeak Digital LLC. All rights reserved.
+          </a>
+          <a
             href="https://digitalheroesco.com"
             target="_blank"
             rel="noopener noreferrer"
