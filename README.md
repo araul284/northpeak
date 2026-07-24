@@ -2,6 +2,12 @@
 
 Marketing site for **NorthPeak Digital** — "The Agency of Ascent." A single-page React application with a hero, services, results/case studies + ROI calculator, pricing, methodology, and a contact form with client-side validation and FAQ accordion.
 
+---
+
+## Live URL
+
+> `https://northpeak-fawn.vercel.app/`
+
 ## Tech Stack
 
 - **React 19** + **TypeScript**
@@ -83,7 +89,3 @@ Nearly all copy and structured content (client logos, service definitions, case 
 - `src/data/agencyData.ts` is missing from this snapshot (see above) — the project won't compile without it.
 - `ContactSection`'s default/reset values for `serviceInterest` (`"Growth Marketing & Ads"`) and `budgetRange` (`"$10k - $25k/mo"`) don't exactly match any of the selectable `<option>` or budget-pill values, so nothing appears pre-selected until the user actively picks an option. Worth aligning these strings with the real option lists.
 - `package.json` still lists `@google/genai`, `express`, `dotenv`, and `motion` as dependencies — leftovers from the original AI Studio template's server-backed Gemini app. None of these are used by the current static frontend; safe to remove unless a backend is planned.
-
-## Deployment
-
-This is a static Vite app — `npm run build` outputs a deployable `dist/` folder for any static host (Vercel, Netlify, Cloudflare Pages, etc.).
