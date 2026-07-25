@@ -43,8 +43,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-zinc-900 font-sans selection:bg-black selection:text-white antialiased overflow-x-hidden">
-      {/* Scroll Progress Indicator */}
-
       {/* Sticky Navigation Bar */}
       <Navbar
         onNavigate={handleNavigate}
