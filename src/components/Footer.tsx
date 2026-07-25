@@ -31,11 +31,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Brand Info (Cols 1-2) */}
           <div className="lg:col-span-2 space-y-4 text-left">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-black text-white flex items-center justify-center border border-black">
-                <Mountain className="w-4 h-4 text-blue-400" />
+              <div className="w-8 h-8 bg-[#0a192f] text-white flex items-center justify-center border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                <Mountain className="w-4 h-4 text-[#38bdf8]" />
               </div>
               <span className="text-xl font-black tracking-tight uppercase text-black">
-                NorthPeak<span className="text-blue-600">.</span>
+                NorthPeak<span className="text-[#0052ff]">.</span>
               </span>
             </div>
 
@@ -51,7 +51,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Quick Links Column */}
           <div className="space-y-3 text-left">
-            <h4 className="text-[11px] font-black uppercase tracking-widest text-black">
+            <h4 className="text-[11px] font-black uppercase tracking-widest text-[#0052ff]">
               Navigation
             </h4>
             <ul className="space-y-2 text-xs font-medium">
@@ -66,7 +66,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <li key={item.id}>
                   <button
                     onClick={() => onNavigate(item.id)}
-                    className="hover:text-blue-600 uppercase tracking-wider font-bold transition-colors"
+                    className="hover:text-[#0052ff] uppercase tracking-wider font-bold transition-colors text-black"
                   >
                     {item.name}
                   </button>
@@ -77,7 +77,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Services Column */}
           <div className="space-y-3 text-left">
-            <h4 className="text-[11px] font-black uppercase tracking-widest text-black">
+            <h4 className="text-[11px] font-black uppercase tracking-widest text-[#0052ff]">
               Pillars
             </h4>
             <ul className="space-y-2 text-xs font-medium text-zinc-600">
@@ -92,7 +92,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Newsletter Column */}
           <div className="space-y-3 text-left">
-            <h4 className="text-[11px] font-black uppercase tracking-widest text-black">
+            <h4 className="text-[11px] font-black uppercase tracking-widest text-[#0052ff]">
               The Peak Brief
             </h4>
             <p className="text-xs text-zinc-600 font-medium">
@@ -100,8 +100,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </p>
 
             {newsletterSubscribed ? (
-              <div className="p-3 border border-black bg-zinc-50 text-black text-xs font-bold uppercase tracking-wider flex items-center gap-2">
-                <Check className="w-4 h-4 text-blue-600" />
+              <div className="p-3 border border-black bg-blue-50 text-black text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                <Check className="w-4 h-4 text-[#0052ff]" />
                 <span>Subscribed!</span>
               </div>
             ) : (
@@ -113,14 +113,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                     placeholder="you@company.com"
                     value={newsletterEmail}
                     onChange={(e) => setNewsletterEmail(e.target.value)}
-                    className="w-full px-3 py-2 border border-black bg-zinc-50 text-xs text-black placeholder-zinc-400 focus:bg-white focus:outline-none"
+                    className="w-full px-3 py-2 border border-black bg-zinc-50 text-xs text-black placeholder-zinc-400 focus:bg-white focus:outline-none focus:border-[#0052ff]"
                   />
                   <button
                     type="submit"
-                    className="p-2 bg-black text-white hover:bg-zinc-800 font-bold uppercase"
+                    className="p-2 bg-[#0a192f] text-white hover:bg-[#0052ff] font-bold uppercase border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
                     aria-label="Subscribe to newsletter"
                   >
-                    <Send className="w-4 h-4 text-blue-400" />
+                    <Send className="w-4 h-4 text-[#38bdf8]" />
                   </button>
                 </div>
               </form>
@@ -131,32 +131,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-black flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-medium text-zinc-600">
-          <a
-            href="https://github.com/araul284/northpeak"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-black transition-colors"
-          >
-            © {new Date().getFullYear()} NorthPeak Digital LLC. All rights reserved.
-          </a>
-          <a
-            href="https://digitalheroesco.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-black transition-colors"
-          >
-            Built for Digital Heroes Training Task
-          </a>
+          <p>© {new Date().getFullYear()} NorthPeak Digital LLC. All rights reserved.</p>
 
           <div className="flex items-center gap-6 font-bold uppercase tracking-wider text-[10px]">
-            <span className="hover:text-black cursor-pointer">Privacy Policy</span>
-            <span className="hover:text-black cursor-pointer">Terms of Service</span>
-            <span className="hover:text-black cursor-pointer">SOC-2 Security</span>
+            <span className="hover:text-[#0052ff] cursor-pointer">Privacy Policy</span>
+            <span className="hover:text-[#0052ff] cursor-pointer">Terms of Service</span>
+            <span className="hover:text-[#0052ff] cursor-pointer">SOC-2 Security</span>
           </div>
 
           <button
             onClick={scrollToTop}
-            className="p-2 px-3 border border-black bg-zinc-50 text-black hover:bg-black hover:text-white transition-colors flex items-center gap-1.5 font-bold uppercase text-[10px] tracking-widest"
+            className="p-2 px-3 border border-black bg-zinc-50 text-black hover:bg-[#0052ff] hover:text-white transition-colors flex items-center gap-1.5 font-bold uppercase text-[10px] tracking-widest shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
             id="back-to-top-btn"
           >
             <span>Back to top</span>

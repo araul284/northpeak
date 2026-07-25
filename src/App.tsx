@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
+import { ScrollProgress } from './components/ScrollProgress';
 import { Hero } from './components/Hero';
 import { ServicesSection } from './components/ServicesSection';
 import { ResultsSection } from './components/ResultsSection';
@@ -43,6 +44,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-zinc-900 font-sans selection:bg-black selection:text-white antialiased overflow-x-hidden">
+      {/* Scroll Progress Indicator */}
+      <ScrollProgress />
+
       {/* Sticky Navigation Bar */}
       <Navbar
         onNavigate={handleNavigate}

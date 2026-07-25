@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FAQS_DATA } from '../data/agencyData';
 import { ContactFormData, FormErrors } from '../types';
 import { Send, CheckCircle2, ChevronDown, ChevronUp, AlertCircle, Sparkles, MessageSquare, Mail, Phone, MapPin } from 'lucide-react';
+import { motion } from 'motion/react';
 
 interface ContactSectionProps {
   initialService?: string;
@@ -141,33 +142,45 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-28 bg-white relative border-b border-black">
+    <section id="contact" className="py-20 sm:py-28 bg-white relative border-b border-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="text-[11px] uppercase tracking-[0.25em] font-black text-blue-600">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto space-y-3"
+        >
+          <div className="text-[11px] uppercase tracking-[0.25em] font-black text-[#0052ff]">
             — Initiate Growth Audit
           </div>
           <h2 className="text-4xl sm:text-5xl font-black text-black tracking-tighter uppercase leading-none">
-            Ready To Claim Your <span className="text-blue-600">Peak?</span>
+            Ready To Claim Your <span className="text-[#0052ff]">Peak?</span>
           </h2>
           <p className="font-serif-italic text-zinc-600 text-lg sm:text-xl leading-relaxed">
             Complete the audit form below. A Senior Strategist will analyze your digital footprint and return a custom growth roadmap within 24 hours.
           </p>
-        </div>
+        </motion.div>
 
         {/* Grid: Contact Form (Left 7 Cols) & Info/FAQ (Right 5 Cols) */}
         <div className="mt-14 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
           {/* Form Area */}
-          <div className="lg:col-span-7 border-2 border-black bg-white p-6 sm:p-10 text-left relative">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="lg:col-span-7 border-2 border-black bg-white p-6 sm:p-10 text-left relative shadow-[5px_5px_0px_0px_rgba(0,82,255,1)]"
+          >
             
             {isSuccess ? (
               /* Success State */
               <div className="space-y-6 py-8 text-center animate-in zoom-in-95 duration-200">
-                <div className="w-16 h-16 bg-black text-white border border-black flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-10 h-10 text-blue-400" />
+                <div className="w-16 h-16 bg-[#0a192f] text-white border border-black flex items-center justify-center mx-auto shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                  <CheckCircle2 className="w-10 h-10 text-[#38bdf8]" />
                 </div>
 
                 <div className="space-y-2">
@@ -177,10 +190,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   </p>
                 </div>
 
-                <div className="p-4 border border-black bg-zinc-50 text-left max-w-md mx-auto space-y-2 text-xs font-mono">
+                <div className="p-4 border border-black bg-blue-50/60 text-left max-w-md mx-auto space-y-2 text-xs font-mono">
                   <div className="flex justify-between">
                     <span className="text-zinc-500 font-bold uppercase">Ticket ID:</span>
-                    <span className="text-blue-600 font-bold">{submittedRefId}</span>
+                    <span className="text-[#0052ff] font-bold">{submittedRefId}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-zinc-500 font-bold uppercase">Target Service:</span>
@@ -194,7 +207,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
                 <button
                   onClick={handleResetForm}
-                  className="px-6 py-3 bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-zinc-800 transition-colors"
+                  className="px-6 py-3 bg-[#0a192f] text-white text-xs font-bold uppercase tracking-widest hover:bg-[#0052ff] transition-colors border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
                   id="contact-reset-btn"
                 >
                   Submit Another Brief
@@ -208,7 +221,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   {/* Full Name */}
                   <div className="space-y-1.5">
                     <label htmlFor="fullName" className="block text-xs font-bold uppercase tracking-wider text-black">
-                      Full Name <span className="text-blue-600">*</span>
+                      Full Name <span className="text-[#0052ff]">*</span>
                     </label>
                     <input
                       type="text"
@@ -220,7 +233,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       className={`w-full px-4 py-3 border bg-zinc-50 text-black placeholder-zinc-400 text-xs font-medium focus:bg-white focus:outline-none transition-colors ${
                         errors.fullName
                           ? 'border-red-600 bg-red-50'
-                          : 'border-black focus:border-blue-600'
+                          : 'border-black focus:border-[#0052ff]'
                       }`}
                     />
                     {errors.fullName && (
@@ -234,7 +247,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   {/* Email */}
                   <div className="space-y-1.5">
                     <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-black">
-                      Business Email <span className="text-blue-600">*</span>
+                      Business Email <span className="text-[#0052ff]">*</span>
                     </label>
                     <input
                       type="email"
@@ -246,7 +259,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       className={`w-full px-4 py-3 border bg-zinc-50 text-black placeholder-zinc-400 text-xs font-medium focus:bg-white focus:outline-none transition-colors ${
                         errors.email
                           ? 'border-red-600 bg-red-50'
-                          : 'border-black focus:border-blue-600'
+                          : 'border-black focus:border-[#0052ff]'
                       }`}
                     />
                     {errors.email && (
@@ -271,14 +284,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       value={formData.companyName}
                       onChange={handleInputChange}
                       placeholder="e.g. AcmeCorp.com"
-                      className="w-full px-4 py-3 border border-black bg-zinc-50 text-black placeholder-zinc-400 text-xs font-medium focus:bg-white focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 border border-black bg-zinc-50 text-black placeholder-zinc-400 text-xs font-medium focus:bg-white focus:outline-none transition-colors focus:border-[#0052ff]"
                     />
                   </div>
 
                   {/* Service Interest Dropdown */}
                   <div className="space-y-1.5">
                     <label htmlFor="serviceInterest" className="block text-xs font-bold uppercase tracking-wider text-black">
-                      Primary Service Interest <span className="text-blue-600">*</span>
+                      Primary Service Interest <span className="text-[#0052ff]">*</span>
                     </label>
                     <select
                       id="serviceInterest"
@@ -301,7 +314,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 {/* Budget Range Radio Pills */}
                 <div className="space-y-2">
                   <label className="block text-xs font-bold uppercase tracking-wider text-black">
-                    Estimated Monthly Ad / Growth Budget <span className="text-blue-600">*</span>
+                    Estimated Monthly Ad / Growth Budget <span className="text-[#0052ff]">*</span>
                   </label>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                     {[
@@ -321,8 +334,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                         }}
                         className={`py-2.5 px-3 border text-[11px] font-bold uppercase tracking-wider transition-colors ${
                           formData.budgetRange === range
-                            ? 'bg-black text-white border-black'
-                            : 'bg-zinc-50 border-black text-black hover:bg-zinc-100'
+                            ? 'bg-[#0a192f] text-white border-black'
+                            : 'bg-zinc-50 border-black text-black hover:bg-blue-50'
                         }`}
                         id={`budget-btn-${range.replace(/\s+/g, '')}`}
                       >
@@ -338,7 +351,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 {/* Message */}
                 <div className="space-y-1.5">
                   <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-black">
-                    Project Details & Primary Goals <span className="text-blue-600">*</span>
+                    Project Details & Primary Goals <span className="text-[#0052ff]">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -350,7 +363,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     className={`w-full px-4 py-3 border bg-zinc-50 text-black placeholder-zinc-400 text-xs font-medium focus:bg-white focus:outline-none transition-colors ${
                       errors.message
                         ? 'border-red-600 bg-red-50'
-                        : 'border-black focus:border-blue-600'
+                        : 'border-black focus:border-[#0052ff]'
                     }`}
                   />
                   {errors.message && (
@@ -369,7 +382,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       name="agreeTerms"
                       checked={formData.agreeTerms}
                       onChange={handleInputChange}
-                      className="mt-0.5 border-black bg-zinc-100 text-black focus:ring-0 w-4 h-4 cursor-pointer accent-black"
+                      className="mt-0.5 border-black bg-zinc-100 text-[#0052ff] focus:ring-0 w-4 h-4 cursor-pointer accent-[#0052ff]"
                       id="agreeTerms"
                     />
                     <span>
@@ -385,7 +398,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full inline-flex items-center justify-center gap-3 py-4 px-6 bg-black text-white font-bold text-xs uppercase tracking-widest hover:bg-zinc-800 disabled:opacity-50 transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-3 py-4 px-6 bg-[#0a192f] text-white font-bold text-xs uppercase tracking-widest hover:bg-[#0052ff] disabled:opacity-50 transition-colors border border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
                   id="contact-submit-btn"
                 >
                   {isSubmitting ? (
@@ -396,7 +409,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   ) : (
                     <>
                       <span>Submit Growth Audit Brief</span>
-                      <Send className="w-4 h-4 text-blue-400" />
+                      <Send className="w-4 h-4 text-[#38bdf8]" />
                     </>
                   )}
                 </button>
@@ -404,21 +417,27 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               </form>
             )}
 
-          </div>
+          </motion.div>
 
           {/* Right Column: Direct Contact & FAQ Accordion */}
-          <div className="lg:col-span-5 space-y-8 text-left">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-5 space-y-8 text-left"
+          >
             
             {/* Quick Contact Info Card */}
-            <div className="border border-black bg-white p-6 sm:p-8 space-y-4">
+            <div className="border border-black bg-white p-6 sm:p-8 space-y-4 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
               <h3 className="text-lg font-black uppercase tracking-tight text-black flex items-center gap-2">
-                <MessageSquare className="w-5 h-5 text-blue-600" />
+                <MessageSquare className="w-5 h-5 text-[#0052ff]" />
                 <span>Direct Access Points</span>
               </h3>
 
               <div className="space-y-3 text-xs font-medium">
-                <div className="flex items-center gap-3 p-3 border border-black bg-zinc-50">
-                  <Mail className="w-4 h-4 text-blue-600 shrink-0" />
+                <div className="flex items-center gap-3 p-3 border border-black bg-blue-50/40">
+                  <Mail className="w-4 h-4 text-[#0052ff] shrink-0" />
                   <div>
                     <p className="text-[10px] font-mono text-zinc-500 uppercase font-bold">Email Enquiries</p>
                     <a href="mailto:hello@northpeakdigital.com" className="text-black font-bold hover:underline">
@@ -427,16 +446,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 p-3 border border-black bg-zinc-50">
-                  <Phone className="w-4 h-4 text-blue-600 shrink-0" />
+                <div className="flex items-center gap-3 p-3 border border-black bg-blue-50/40">
+                  <Phone className="w-4 h-4 text-[#0052ff] shrink-0" />
                   <div>
                     <p className="text-[10px] font-mono text-zinc-500 uppercase font-bold">Strategy Desk</p>
                     <p className="text-black font-bold">+1 (800) 482-9012</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 p-3 border border-black bg-zinc-50">
-                  <MapPin className="w-4 h-4 text-blue-600 shrink-0" />
+                <div className="flex items-center gap-3 p-3 border border-black bg-blue-50/40">
+                  <MapPin className="w-4 h-4 text-[#0052ff] shrink-0" />
                   <div>
                     <p className="text-[10px] font-mono text-zinc-500 uppercase font-bold">Headquarters</p>
                     <p className="text-black font-bold">San Francisco, CA & Denver, CO</p>
@@ -446,9 +465,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             </div>
 
             {/* FAQ Accordion */}
-            <div id="faq" className="border border-black bg-white p-6 sm:p-8 space-y-4">
+            <div id="faq" className="border border-black bg-white p-6 sm:p-8 space-y-4 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
               <h3 className="text-lg font-black uppercase tracking-tight text-black flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-blue-600" />
+                <Sparkles className="w-5 h-5 text-[#0052ff]" />
                 <span>Frequently Asked Questions</span>
               </h3>
 
@@ -464,13 +483,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       >
                         <span className="text-xs font-bold uppercase tracking-wide text-black">{faq.q}</span>
                         {isOpen ? (
-                          <ChevronUp className="w-4 h-4 text-blue-600 shrink-0" />
+                          <ChevronUp className="w-4 h-4 text-[#0052ff] shrink-0" />
                         ) : (
                           <ChevronDown className="w-4 h-4 text-black shrink-0" />
                         )}
                       </button>
                       {isOpen && (
-                        <div className="px-4 pb-4 pt-0 text-xs text-zinc-600 leading-relaxed border-t border-black mt-1 pt-3 font-medium">
+                        <div className="px-4 pb-4 pt-0 text-xs text-zinc-600 leading-relaxed border-t border-black mt-1 pt-3 font-medium bg-white">
                           {faq.a}
                         </div>
                       )}
@@ -480,7 +499,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               </div>
             </div>
 
-          </div>
+          </motion.div>
 
         </div>
 
