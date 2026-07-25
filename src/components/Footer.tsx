@@ -134,7 +134,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <p>
             <a
               href="https://github.com/araul284/northpeak"
-              className="text-black hover:text-[#0052ff]"
+              className="hover:text-[#0052ff]"
               target="_blank"
               rel="noreferrer"
             >
@@ -144,7 +144,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           <a
             href="https://digitalheroesco.com"
-            className="text-black hover:text-[#0052ff]"
+            className="hover:text-[#0052ff]"
             target="_blank"
             rel="noreferrer"
           >
