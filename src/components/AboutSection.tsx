@@ -1,6 +1,6 @@
 import React from 'react';
 import { Target, Cpu, RefreshCw, Rocket, Code, Sparkles, CheckCircle } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 
 export const AboutSection: React.FC = () => {
   const steps = [

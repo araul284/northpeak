@@ -1,6 +1,6 @@
 import React from 'react';
 import { X, CheckCircle2, Clock, Target, ArrowRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ServiceItem } from '../types';
 
 interface ServiceModalProps {

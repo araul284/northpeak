@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, Sparkles, CheckCircle2, TrendingUp, Star } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { TRUST_CLIENTS } from '../data/agencyData';
 
 interface HeroProps {

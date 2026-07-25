@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { PRICING_PLANS_DATA } from '../data/agencyData';
 import { Check, X, Sparkles, ArrowRight, ShieldCheck } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 
 interface PricingSectionProps {
   onSelectTier: (tierName: string) => void;

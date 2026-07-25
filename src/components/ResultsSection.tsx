@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { CASE_STUDIES_DATA } from '../data/agencyData';
 import { Star, Quote, Calculator, TrendingUp, DollarSign, ArrowRight, Award } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface ResultsSectionProps {
   onOpenAuditWithData?: (revenue: number, spend: number) => void;

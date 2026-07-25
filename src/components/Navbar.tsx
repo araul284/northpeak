@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Mountain, Menu, X, ArrowRight, PhoneCall } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface NavbarProps {
   onNavigate: (sectionId: string) => void;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FAQS_DATA } from '../data/agencyData';
 import { ContactFormData, FormErrors } from '../types';
 import { Send, CheckCircle2, ChevronDown, ChevronUp, AlertCircle, Sparkles, MessageSquare, Mail, Phone, MapPin } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 
 interface ContactSectionProps {
   initialService?: string;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TrendingUp, Code2, Search, Palette, Zap, BarChart3, ArrowUpRight, Check } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { SERVICES_DATA } from '../data/agencyData';
 import { ServiceItem } from '../types';
 import { ServiceModal } from './ServiceModal';
