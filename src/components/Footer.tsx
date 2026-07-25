@@ -133,6 +133,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         <div className="pt-8 border-t border-black flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-medium text-zinc-600">
           <p>© {new Date().getFullYear()} NorthPeak Digital LLC. All rights reserved.</p>
 
+          <a href="digitalheroesco.com">
+            Built for Digital Heroes Training Task. <span className="text-[#0052ff]">→</span>
+          </a>
+
           <div className="flex items-center gap-6 font-bold uppercase tracking-wider text-[10px]">
             <span className="hover:text-[#0052ff] cursor-pointer">Privacy Policy</span>
             <span className="hover:text-[#0052ff] cursor-pointer">Terms of Service</span>
